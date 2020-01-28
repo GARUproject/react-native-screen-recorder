@@ -1,6 +1,7 @@
 {
   "name": "react-native-screen-recorder",
   "version": "1.0.5",
+  "private": true,
   "description": "A React Native module that allows you to capture the screen and save it in specific directory",
   "main": "index.js",
   "scripts": {
