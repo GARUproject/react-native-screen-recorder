@@ -72,11 +72,15 @@ public class RecordService extends Service {
             return false;
         }
 
-        initRecorder();
-        createVirtualDisplay();
-        mediaRecorder.start();
-        running = true;
-        return true;
+        try{
+            initRecorder();
+            createVirtualDisplay();
+            mediaRecorder.start();
+            running = true;
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     public boolean stopRecord() {
@@ -124,9 +128,6 @@ public class RecordService extends Service {
                     return null;
                 }
             }
-
-            Toast.makeText(getApplicationContext(), rootDir, Toast.LENGTH_SHORT).show();
-
             return rootDir;
         } else {
             return null;
